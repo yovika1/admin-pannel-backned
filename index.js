@@ -19,7 +19,7 @@ app.use("/data", router);
 app.use("/userdata",usersRouter);
 app.use(ProductRoutes);
 app.use(adminUserRoute);
-
+app.use(Express.static("uploads"));
 
 connectDB()
   .then(() => {

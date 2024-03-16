@@ -5,12 +5,10 @@ const ProductSchema = new mongoose.Schema({
 
         id: String,
         productTitle: String,
-        shortDescription: String,
+        quantity: Number,
         productBrief: String,    
         url: String,
-        // detailUrl: String,
         price: String,
-        // quantity: Number,
         discount: String,
   
   
