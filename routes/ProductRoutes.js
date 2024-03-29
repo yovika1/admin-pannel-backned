@@ -1,6 +1,6 @@
 
 import express from 'express';
-import { deleteProduct, getAllProducts, getProduct, productInsert } from '../controllers/Products.js'
+import { deleteProduct, detailUpdate, getAllProducts, getProduct, productInsert, searchproduct } from '../controllers/Products.js'
 import multer from 'multer';
 
 
@@ -13,7 +13,6 @@ const storage  = multer.diskStorage({
         cb(null, `${Date.now()}${file.originalname}`)
     }
 });
-
 const upload = multer({ storage: storage });
 
 const router = express.Router();
@@ -21,8 +20,10 @@ const router = express.Router();
 router.get('/getData', getAllProducts)
 
 router.post('/insertData', upload.single("image"), productInsert);
-
+// router.post('updatesize/:id',updateSize)
+router.put('/updateProduct',detailUpdate);
+// router.put('/updateProduct',upload.single("image"),detailUpdates);
 router.delete('/deleteData/:id',deleteProduct);
 router.get('/gettingProduct/:id',getProduct);
-
+router.get('/searching',searchproduct)
 export default router;

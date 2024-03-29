@@ -8,9 +8,11 @@ import cors from "cors";
 import usersRouter from "./routes/UserRoutes.js";
 import adminUserRoute from "./routes/AdminRoutes.js";
 import ProductRoutes from "./routes/ProductRoutes.js";
-// import { sendOtp } from "./controllers/User.js";
+import  BannerRoutes  from "./routes/BannerRoutes.js";
+
 const app = Express();
 dotenv.config();
+
 
 app.use(Express.json());
 app.use(cors());
@@ -19,6 +21,7 @@ app.use("/data", router);
 app.use("/userdata",usersRouter);
 app.use(ProductRoutes);
 app.use(adminUserRoute);
+app.use(BannerRoutes)
 app.use(Express.static("uploads"));
 
 connectDB()
