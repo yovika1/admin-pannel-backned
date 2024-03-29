@@ -43,18 +43,16 @@ export const LoginOtp = async (req, res) => {
           OTP: OTP,
         });
         if (createUser) {
-          // const token = Jwt.sign({ email: Email }, "secretekey");
-          // console.log(token);
+
           await createUser.save();
           res.status(200).json({
             message: "OTP sent",
-            // token,
           });
         } else {
           res.status(200).json({
             message: "Otp not sent",
             isOtpSent: false,
-            // token
+      
           });
         }
       }

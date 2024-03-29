@@ -20,9 +20,7 @@ const router = express.Router();
 router.get('/getData', getAllProducts)
 
 router.post('/insertData', upload.single("image"), productInsert);
-// router.post('updatesize/:id',updateSize)
 router.put('/updateProduct',detailUpdate);
-// router.put('/updateProduct',upload.single("image"),detailUpdates);
 router.delete('/deleteData/:id',deleteProduct);
 router.get('/gettingProduct/:id',getProduct);
 router.get('/searching',searchproduct)

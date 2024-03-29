@@ -28,9 +28,7 @@ export const productInsert = async (req, res) => {
     res.status(500).send("Internal Server Error");
   }
 };
-// const handleEditorChange = (newValue) => {
-//   setEditorValue(newValue);
-// };
+
 
 // for get the product
 export const getAllProducts = async (req, res) => {
