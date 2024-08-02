@@ -5,17 +5,18 @@ import { Product } from "../schema/Products.js";
 export const productInsert = async (req, res) => {
   console.log("file", req.file);
   const { filename } = req.file;
-  const { productTitle, productBrief, price, quantity, discount, size } =
+  const { productTitle, productBrief, price, quantity, discount, size ,categoryId} =
     req.body;
 
   try {
     const newProductFile = await Product.create({
       productTitle: productTitle,
       quantity: quantity,
-      productBrief: productBrief,
+      productBrief: productBrief, 
       discount: discount,
       price: price,
       url: filename,
+      categoryId: categoryId,
       size: size,
     });
 
@@ -116,6 +117,7 @@ export const updateSize = async (req, res) => {
   }
 };
 
+// search product
 export const searchproduct = async (req, res) => {
   const { query } = req.query;
   console.log(query);

@@ -1,9 +1,13 @@
-import mongoose from "mongoose";
+import mongoose, { Mongoose } from "mongoose";
 
 const ProductSchema = new mongoose.Schema(
   {
-    id: String,
+    
     productTitle: String,
+    categoryId:{
+      type: mongoose.Schema.Types.ObjectId,
+      ref:"Category"
+    },
     quantity: Number,
     productBrief: String,
     url: String,
